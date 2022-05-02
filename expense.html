@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <style>
+        h2{
+            text-decoration: underline;
+            text-align: center;
+        }
+        #block{
+            position: absolute;
+            left: 500px;
+            width: 300px;
+            text-align: center;
+        }
+        #save{
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 100px;
+            height: 40px;
+            background-color: rgb(81, 81, 255);
+            color: white;
+            font-size: 18px;
+        }
+        #title{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Monthly Expense Report</h2>
+    <div id="block">
+        <form action="/save" method="post">
+            <label for="date">Date: </label>
+            <input type="date" name="date" id="date"><br><br>
+            <label for="mortage">Mortage: </label>
+            <input type="number" name="mortage" id="mortage">><br><br>
+            <label for="gas">Gas: </label>
+            <input type="number" name="gas" id="gas">><br><br>
+            <label for="childCare">Child Care: </label>
+            <input type="number" name="childCare" id="childCare">><br><br>
+            <label for="insurance">Insurance: </label>
+            <input type="number" name="insurance" id="insurance">><br><br>
+            <input type="radio" name="periodType" id="periodType1">
+            <label for="periodType1">Monthly</label>
+            <input type="radio" name="periodType" id="periodType2">
+            <label for="periodType2">Yearly</label><br><br>
+            <label for="misc">Misc: </label>
+            <input type="number" name="Misc" id="Misc"><br><br><br>
+            <input type="submit" value="Save" id="save">
+        </form>
+    </div>
+</body>
+</html>
