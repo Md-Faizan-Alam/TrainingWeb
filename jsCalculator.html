@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #container{
+            padding:20px;
+            width: 300px;
+            margin: 100px auto;
+        }
+        input{
+            margin: 20px 0px;
+        }
+        button{
+            margin-right: 10px;
+            background-color: #5f5fff;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <label for="firstNumber">First Number: </label>
+        <input type="number" id="firstNumber">
+        <label for="secondNumber">Second Number: </label>
+        <input type="number" id="secondNumber">
+        <button onclick="calculate(1)">Add</button>
+        <button onclick="calculate(2)">Sub</button>
+        <button onclick="calculate(3)">Mul</button>
+        <button onclick="calculate(4)">Div</button><br>
+        <label for="result">Result : </label>
+        <input type="number" id="result">
+    </div>
+    <script>
+        let firstNumber = document.getElementById('firstNumber');
+        let secondNumber = document.getElementById('secondNumber');
+        let result = document.getElementById('result');
+
+        function calculate(n){
+            let a = parseFloat(firstNumber.value);
+            let b = parseFloat(secondNumber.value);
+            let c;
+            if(n==1){
+                c = a+b;
+            }
+            else if(n==2){
+                c = a-b;
+            }
+            else if(n==3){
+                c = a*b;
+            }
+            else if(n==4){
+                c = a/b;
+            }
+            result.value = c;
+        }
+    </script>
+</body>
+</html>

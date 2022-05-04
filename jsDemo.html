@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEmo</title>
+</head>
+<body>
+    <h1><u><i>This is a demo for JS</i></u></h1>
+    <button onclick="callMe()">Alert Me</button><br><br>
+    Name: <input onkeyup="print()" type="text" id="name">
+    <button onclick="greet()">See greetings</button>
+    <div id="screen"></div>
+    <script>
+        function callMe(){
+            alert("Hello World");
+        }
+        function greet(){
+            let name = document.getElementById('name').value;
+            document.getElementById('screen').innerHTML = "Hello "+name;
+        }
+        function print(){
+            let txt = document.getElementById('name').value;
+            document.getElementById('screen').innerHTML = "Hello "+txt;
+        }
+    </script>
+</body>
+</html>
