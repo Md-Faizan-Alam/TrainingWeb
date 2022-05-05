@@ -6,49 +6,44 @@ let designationInput = document.getElementById('designation');
 
 let employeeList = [];
 
-class Employee{
-    constructor(empName,empId,joinDate,hoursWorked,designation){
+class Employee {
+    constructor(empName, empId, joinDate, hoursWorked, designation) {
         this.empName = empName;
         this.empId = empId;
         this.joinDate = joinDate;
         this.hoursWorked = hoursWorked;
         this.designation = designation;
-        if(designation=="Manager"){
-            this.salary = hoursWorked*90;
+        if (designation == "Manager") {
+            this.salary = hoursWorked * 90;
         }
-        else if(designation=="Consultant"){
-            this.salary = hoursWorked*70;
+        else if (designation == "Consultant") {
+            this.salary = hoursWorked * 70;
         }
-        else if(designation=="Trainee"){
-            this.salary = hoursWorked*45;
+        else if (designation == "Trainee") {
+            this.salary = hoursWorked * 45;
         }
     }
-    getDetails(){
-        return this.empName+' who is a '+this.designation+' will get $'+this.salary;
+    getDetails() {
+        return `${this.empName} who is a ${this.designation} will get $${this.salary}`;
     }
 }
-document.addEventListener("submit",addEmployee);
-
-function addEmployee(e){
+document.addEventListener("submit", (e) => {
     e.preventDefault();
     let empName = empNameInput.value;
     let empId = empIdInput.value;
     let joinDate = joinDateInput.value;
     let hoursWorked = hoursWorkedInput.value;
     let designation = designationInput.value;
-    employeeList.push(new Employee(empName,empId,joinDate,hoursWorked,designation));
+    employeeList.push(new Employee(empName, empId, joinDate, hoursWorked, designation));
     console.log("Done");
     empNameInput.value = null;
     empIdInput.value = null;
     joinDateInput.value = null;
     hoursWorked.value = null;
     designation.value = null;
-}
+});
 
-function passOn(){
-    let details = [];
-    for(let i in employeeList){
-        details.push(employeeList[i].getDetails());
-    }
+function passOn() {
+    let details = employeeList.map((employee) => { return employee.getDetails(); });
     document.cookie = JSON.stringify(details);
 }
