@@ -1,4 +1,4 @@
-let details = JSON.parse(document.cookie);
+let details = JSON.parse(localStorage.getItem('details'));
 let screen = document.getElementById('screen');
 
 for(let i in details){

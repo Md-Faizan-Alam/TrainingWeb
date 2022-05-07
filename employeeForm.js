@@ -3,6 +3,7 @@ let empIdInput = document.getElementById('empId');
 let joinDateInput = document.getElementById('joinDate');
 let hoursWorkedInput = document.getElementById('hoursWorked');
 let designationInput = document.getElementById('designation');
+let details;
 
 let employeeList = [];
 
@@ -44,6 +45,7 @@ document.addEventListener("submit", (e) => {
 });
 
 function passOn() {
+    localStorage.clear();
     let details = employeeList.map((employee) => { return employee.getDetails(); });
-    document.cookie = JSON.stringify(details);
+    localStorage.setItem('details',JSON.stringify(details));
 }
